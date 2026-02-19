@@ -51,3 +51,30 @@ SELECT * FROM public.emptystack_accounts WHERE username = 'your-boss-99';
 --!   username   |    password    | first_name | last_name
 --------------+----------------+------------+-----------
 --! your-boss-99 | notagaincarter | Skylar     | Singer
+
+--STEP 8
+\d emptystack_projects; --* Go into "emptystack_projects" table to see contents
+SELECT id FROM public.emptystack_projects WHERE code = 'TAXI';
+--* Return ROW whose "code" COLUMN contains the word "TAXI"
+--! id
+----------
+--! DczE0v2b
+
+--STEP 9
+--! node .\mainframe.js -stop  
+--! Debugger listening on ws://127.0.0.1:50941/4531a442-a318-4abf-8b5b-2e8083326a29
+--! For help, see: https://nodejs.org/en/docs/inspector
+--! Debugger attached.
+--! WARNING: admin access required. Unauthorized access will be logged.
+--! Username: your-boss-99
+--! Password: notagaincarter
+--! Welcome, your-boss-99.
+--! Project ID: DczE0v2b
+--! Initiating project shutdown sequence...
+--! 5...
+--! 4...
+--! 3...
+--! 2...
+--! 1...
+--! Project shutdown complete.
+--! Waiting for the debugger to disconnect...
