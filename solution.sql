@@ -29,3 +29,25 @@ SELECT * FROM public.emptystack_accounts WHERE last_name = 'Steele';
 ----------------+-------------+------------+-----------
 --! triple-cart-38 | password456 | Andrew     | Steele
 --! lance-main-11  | password789 | Lance      | Steele
+
+--STEP 5
+node mainframe.js;
+--!username: "triple-cart-38";
+--!password: "lance-main-11";
+
+--STEP 6
+psql -f emptystack.sql; --* Creates new tables within "mainframe_override" database
+\d emptystack_messages; --* Go into "emptystack_messages" to see what table holds
+SELECT * FROM public.emptystack_messages WHERE to = 'triple-cart-38';
+--* Returns ROWS inside public.emptystack_messages WHERE the reciever "to" = "triple-cart-38";
+Ctrl f to search for taxis
+--! LidWj | your-boss-99                   | triple-cart-38 | Project TAXI                                                                           
+--! | Deploy Project TAXI by end of week. We need this out ASAP.
+
+--STEP 7
+\d emptystack_accounts; --* Go into "emptystack_accounts" table
+SELECT * FROM public.emptystack_accounts WHERE username = 'your-boss-99';
+--* Return ROW in "public.emptystack_accounts" WHERE the username is "your-boss-99"
+--!   username   |    password    | first_name | last_name
+--------------+----------------+------------+-----------
+--! your-boss-99 | notagaincarter | Skylar     | Singer
